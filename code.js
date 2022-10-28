@@ -75,8 +75,8 @@ console.log(nameLengths);
 
 let names2 = 0;
 
-for (var element of names) {
- names2 += element.length;
+for (var number of nameLengths) {
+ names2 += number;
 }
 
 console.log(names2);
@@ -86,10 +86,11 @@ console.log(names2);
 
 function nTimes(word, n) {
   if (n === 1) return word;
-  else return word + nTimes(word, n - 1);
+  if (n > 0)   return word + nTimes(word, n - 1);
+  else return "error"
 }
 
-console.log(nTimes("hello", 6));
+console.log(nTimes("hello",3));
 
 // 8.	Write a function that takes two parameters, firstName and lastName, and returns a full name.
 // •	The full name should be the first and the last name separated by a space.
@@ -102,7 +103,7 @@ console.log(createFullName("Rachel", "Courtney"));
 
 // 9.	Write a function that takes an array of numbers and returns true if the sum of all the numbers in the array is greater than 100.
 
-greaterThanArray = [8, 8, 8, 800];
+greaterThanArray = [8, 8, 8000, 8];
 
 function moreThan100(array) {
   const greaterTotal = array.reduce((accumulator, value) => {
